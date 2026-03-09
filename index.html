@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="description"
         content="">
-  <meta name="keywords" content="PhysConvex">
+  <meta name="keywords" content="Flowin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PhysConvex: Physics-Informed Dynamic Convex Fields for Reconstruction and Simulation</title>
+  <title>Feature-flow Interpretation of Deep Convolutional Neural Networks</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -88,24 +88,24 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">PhysConvex: Physics-Informed Dynamic Convex Fields for Reconstruction and Simulation</h1>
+          <h1 class="title is-1 publication-title">Feature-flow Interpretation of Deep Convolutional Neural Networks</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://danalaina.github.io/">Dan Wang</a><sup>1</sup>,</span>
+              <a href="https://xrcui.github.io/">Xinrui Cui </a><sup></sup>,</span>
             <span class="author-block">
-              <a href="https://xrcui.github.io/">Xinrui Cui</a><sup>2</sup>,</span>
+              <a href="https://danalaina.github.io/">Dan Wang</a><sup></sup>,</span>
             <span class="author-block">
-              <a href="https://serge.belongie.com/">Serge Belongie</a><sup>3</sup>,
+              <a href="https://people.ece.ubc.ca/~zjanew/">Z. Jane Wang</a><sup></sup>
             </span>
-            <span class="author-block">
+            <!-- <span class="author-block">
               <a href="https://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a><sup>2</sup>,
-            </span>
+            </span> -->
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of California, San Diego</span>
-            <span class="author-block"><sup>2</sup>University of North Texas</span>
-            <span class="author-block"><sup>3</sup>University of Copenhagen</span>
+            <span class="author-block"><sup></sup>University of British Columbia</span>
+            <!-- <span class="author-block"><sup>2</sup>University of North Texas</span>
+            <span class="author-block"><sup>3</sup>University of Copenhagen</span> -->
           </div>
 
           <div class="column has-text-centered">
@@ -121,16 +121,28 @@
                 </a>
               </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/html/2602.18886v1"
+                <a href="./static/paper/FLOWIN.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="ai ai-arxiv"></i>
+                      <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>PDF</span>
                 </a>
               </span>
 
               <!-- Video Link. -->
+              </div>
+              <!-- Added image for model visualization -->
+              <div class="publication-image" style="margin-top: 1rem;">
+                <img src="./static/images/showcase.jpg" alt="Model visualization" style="max-width:100%;height:auto;">
+              </div>
+              <!-- Description paragraph for MINT -->
+              <div class="publication-description" style="margin-top: 1rem; text-align: justify;">
+                <p>
+                  The feature-flow interpretation for the VGG16 network decision. For the bird class prediction of the input image, the feature-flow provides the interpretation from deep to shallow layers. For the Pool5 and Pool4 layers, the sunburst charts present feature-flow units (the outer circle) and their corresponding interpretable body parts (the inner circle). Meantime, we also show the most critical feature-flow unit for each object part on the right side of the corresponding sunburst chart. For the Pool3 layer, the feature-flow units and their contributions to the network prediction are displayed in the doughnut chart. Besides, we show the top-4 feature-flow units in the Pool3 layer.
+                </p>
+              </div>
+
               <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
@@ -253,7 +265,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Reconstructing and simulating dynamic scenes only from videos with both visual realism and physical consistency remains a fundamental challenge. Existing 3D representations, such as NeRFs and 3DGS, excel in appearance reconstruction but struggle to capture complex material deformation and dynamics. We propose PhysConvex, a Physics-informed Dynamic Convex Field that unifies visual reconstruction and physical simulation. PhysConvex represents deformable radiance fields using physically grounded 3D convex primitives governed by continuum mechanics. We introduce a boundary-driven dynamic convex representation that models deformation through vertex and surface dynamics, capturing spatially adaptive, non-uniform deformation, and evolving boundaries. To efficiently simulate complex geometries and heterogeneous materials, we further develop a reduced-order convex simulation that advects dynamic convex fields using neural skinning eigenmodes as shape- and material-aware deformation bases with time-varying reduced DOFs under Newtonian dynamics. Convex dynamics also offers compact, gap-free volumetric coverage, enhancing both geometric efficiency and simulation fidelity. Experiments demonstrate that PhysConvex achieves physically consistent dynamic reconstruction of geometry, appearance, and physical properties from videos, outperforming existing methods.
+            Despite the great success of deep convolutional neural networks (DCNNs) in computer vision tasks, their black-box aspect remains a critical concern. The interpretability of DCNN models has been attracting increasing attention. In this work, we propose a novel model, Feature-fLOW INterpretation (FLOWIN) model, to interpret a DCNN by its feature-flow. The FLOWIN can express deep-layer features as a sparse representation of shallow-layer features. Based on that, it distills the optimal feature-flow for the prediction of a given instance, starting from deep layers to shallow layers. Therefore, the FLOWIN can provide an instance-specific interpretation, which presents its feature-flow units and their interpretable meanings for its network decision. The FLOWIN can also give the quantitative interpretation in which the contribution of each flow unit in different layers is used to interpret the net decision. From the class-level view, we can further understand networks by studying feature-flows within and between classes. The FLOWIN not only provides the visualization of the feature-flow but also studies feature-flow quantitatively by investigating its density and similarity metrics. In our experiments, the FLOWIN is evaluated on different datasets and networks by quantitative and qualitative ways to show its interpretability.
           </p>
           <!-- <p>
             Our approach augments neural radiance fields
@@ -428,11 +440,15 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{wang2026physconvex,
-  title={PhysConvex: Physics-Informed 3D Dynamic Convex Radiance Fields for Reconstruction and Simulation},
-  author={Wang, Dan and Cui, Xinrui and Belongie, Serge and Ramamoorthi, Ravi},
-  journal={arXiv preprint arXiv:2602.18886},
-  year={2026}
+    <pre><code>@ARTICLE{9019647,
+  author={Cui, Xinrui and Wang, Dan and Wang, Z. Jane},
+  journal={IEEE Transactions on Multimedia}, 
+  title={Feature-Flow Interpretation of Deep Convolutional Neural Networks}, 
+  year={2020},
+  volume={22},
+  number={7},
+  pages={1847-1861},
+  doi={10.1109/TMM.2020.2976985}
 }</code></pre>
   </div>
 </section>
