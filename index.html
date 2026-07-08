@@ -264,20 +264,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Reconstructing and simulating dynamic scenes only from videos with both visual realism and physical consistency remains a fundamental challenge. Existing 3D representations, such as NeRFs and 3DGS, excel in appearance reconstruction but struggle to capture complex material deformation and dynamics. We propose PhysConvex, a Physics-informed Dynamic Convex Field that unifies visual reconstruction and physical simulation. PhysConvex represents deformable radiance fields using physically grounded 3D convex primitives governed by continuum mechanics. We introduce a boundary-driven dynamic convex representation that models deformation through vertex and surface dynamics, capturing spatially adaptive, non-uniform deformation, and evolving boundaries. To efficiently simulate complex geometries and heterogeneous materials, we further develop a reduced-order convex simulation that advects dynamic convex fields using neural skinning eigenmodes as shape- and material-aware deformation bases with time-varying reduced DOFs under Newtonian dynamics. Convex dynamics also offers compact, gap-free volumetric coverage, enhancing both geometric efficiency and simulation fidelity. Experiments demonstrate that PhysConvex achieves physically consistent dynamic reconstruction of geometry, appearance, and physical properties from videos, outperforming existing methods.
+            Reconstructing deformable objects from video requires a 4D representation that should preserve geometry, explain motion through physics, and generalize to future or new physical conditions. Existing dynamic NeRF and Gaussian methods achieve strong view synthesis, yet their voxel or ellipsoidal primitives are primarily designed for appearance rendering and typically driven by centers or predefined particle bindings, limiting physically meaningful non-uniform deformation and sharp boundary evolution. We present PhysConvex, a physics-informed dynamic convex field for video-based reconstruction, physical system identification, and simulation. PhysConvex represents a dynamic object as material-space deformable convex primitives whose boundary is advected by physical dynamics. The boundary-driven convex expresses non-uniform deformation and evolving active supports while serving simultaneously as a rendering element, deformation carrier, and physical support where mass, elastic response, forces, and contacts are evaluated. We further introduce a mesh-free reduced-order convex simulator in which neural skinning modes define physics-based deformation bases directly over deformable convex supports. Experiments show improved dynamic and physical reconstruction, efficiency, future prediction, and generalization to changed materials, forces, and boundary conditions.
           </p>
-          <!-- <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p> -->
         </div>
       </div>
     </div>
@@ -301,6 +289,24 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">PhysConvex Framework</h2>
+          <div class="publication-image" style="margin-top: 1rem;">
+            <img src="./static/images/fig3-overview.png" alt="Model visualization" style="max-width:100%;height:auto;">
+          </div>
+          <!-- Description paragraph -->
+          <div class="publication-description" style="margin-top: 1rem; text-align: justify;">
+            <p>
+              PhysConvex proposes differentiable boundary-driven dynamic convex field and mesh-free reduced-order convex simulation, jointly reconstructing geometry, appearance, and physical properties of dynamic objects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="columns is-centered">
       <!-- Visual Effects. -->
