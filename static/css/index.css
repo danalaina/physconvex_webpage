@@ -110,6 +110,25 @@ body {
 .publication-body img {
 }
 
+.bold {
+  font-weight: 700;
+}
+
+.highlight_red {
+  color: #d9480f;
+  font-weight: 600;
+}
+
+.highlight_blue {
+  color: #0085f9;
+  font-weight: 600;
+}
+
+.highlight_orange {
+  color: #ff9945;
+  font-weight: 600;
+}
+
 .results-carousel {
   overflow: hidden;
 }

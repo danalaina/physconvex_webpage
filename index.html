@@ -126,7 +126,7 @@
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>ECCV 2026</span>
                 </a>
               </span>
 
@@ -294,14 +294,53 @@
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">PhysConvex Framework</h2>
+          <h2 class="title is-3">Challenge</h2>
+          <!-- Description paragraph -->
+          <div class="publication-description" style="margin-top: 1rem; text-align: justify;">
+            <p>
+              Video-based deformable reconstruction requires a 4D representation that <span class="bold">preserves geometry, captures physics, and generalizes to unseen conditions</span>.
+              Existing dynamic NeRF and Gaussian methods render well, yet their voxel or ellipsoidal primitives are primarily designed for appearance rendering and typically driven by centers or predefined particle bindings, limiting <span class="bold">physically meaningful non-uniform deformation and sharp boundary evolution</span>.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Approach</h2>
+          <div class="publication-description" style="margin-top: 1rem; text-align: justify;">
+            <p>
+              Key insight: <span class="bold">the rendering primitive should also be the material support for physical deformation and simulation</span>. As such, we propose <span class="highlight_blue">PhysConvex</span>, a dynamic 4D representation that preserves appearance, geometry, and physical behavior. Specifically, we introduce:
+              1. <span class="highlight_blue">Boundary-driven dynamic convex representation</span> that gives each vertex spatially adaptive deformation capacity, rather than forcing primitives to move as a center-driven kernel.
+              2. <span class="highlight_blue">Mesh-free reduced-order convex simulation</span> where dynamic convexes are advected under continuum mechanics via a continuous implicit neural skinning field that encodes physics-informed, shape- & material-aware deformation modes.
+            </p>
+          </div>
+          <div class="publication-image" style="margin-top: 1rem;">
+            <img src="./static/images/fig2-convex.png" alt="Model visualization" style="max-width:100%;height:auto;">
+          </div>
+          <!-- Description paragraph -->
+
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Pipeline</h2>
           <div class="publication-image" style="margin-top: 1rem;">
             <img src="./static/images/fig3-overview.png" alt="Model visualization" style="max-width:100%;height:auto;">
           </div>
           <!-- Description paragraph -->
           <div class="publication-description" style="margin-top: 1rem; text-align: justify;">
             <p>
-              PhysConvex proposes differentiable boundary-driven dynamic convex field and mesh-free reduced-order convex simulation, jointly reconstructing geometry, appearance, and physical properties of dynamic objects.
+              PhysConvex introduces boundary-driven dynamic convex fields integrated with mesh-free reduced-order convex simulation for dynamic reconstruction, system identification, physical generalization. It recovers appearance, geometry, and physics from videos, improving dynamic and physical reconstruction, and training efficiency. In <span class="highlight_blue">stage 1</span>, an undeformed convex field is reconstructed over the first multi-view frame. In <span class="highlight_orange">stage 2</span>, the reduced-order convex simulation advects our boundary-driven dynamic convex field under continuum mechanics, and physical properties can be optimized through joint differential simulation and rendering using video supervision.
+
             </p>
           </div>
         </div>
